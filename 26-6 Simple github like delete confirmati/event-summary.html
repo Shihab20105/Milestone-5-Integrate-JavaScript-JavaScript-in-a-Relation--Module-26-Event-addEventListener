@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple github</title>
+</head>
+<body>
+    <h1>26-6 Simple github like delete confirmation button</h1>
+    <h1>Final DOM event handlers</h1>
+    <h3 id="handler-status">Default Text</h3>
+    <input id="input-filed" type="text">
+    <button id="btn-update">Updated</button>
+    <p id="input-text-display">Default Input Text</p>
+    <br>
+    <br>
+    <button onclick="handleOnclick()">Handle event by add onclick function</button>
+    <button id="event-listener">Handle event by addEventListener</button>
+    <script>
+        function handleOnclick(){
+            //console.log('Button clicked');
+            const handlerStatus = document.getElementById('handler-status');
+            handlerStatus.innerText = 'Handled by function attached on onclick attribute';
+        }
+        //Option: 2
+        document.getElementById('event-listener').addEventListener('click', function(){
+            const handlerStatus = document.getElementById('handler-status');
+            handlerStatus.innerText = 'Text updated by add event listener button';
+        })
+        //Option: 2 Recap
+        document.getElementById('btn-update').addEventListener('click', function(){
+            //console.log('Update button clicked');
+            const inputField = document.getElementById('input-filed');
+            //console.log(inputField.innerText); //You can not get anything from inner text
+            //console.log(inputField.value);
+            const inputText = inputField.value
+
+            const p = document.getElementById('input-text-display');
+            p.innerText = inputText;
+            inputField.value = '';
+        })
+    </script>
+</body>
+</html>
