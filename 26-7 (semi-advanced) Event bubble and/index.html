@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event bubble</title>
+</head>
+<body>
+    <h1>26-7 (semi-advanced) Event bubble and Stop propagating</h1>
+    <h1 onclick="console.log('I am clicked')">Special events for DOM today</h1>
+    <!-- <h1 onclick="console.log("I am clicked")">Special events for DOM today</h1> -->
+    <!-- <button onclick="console.log(7)">Click Me</button> -->
+    <button title="This is a tooltip" onclick="console.log(7)">Click Me</button>
+    <!-- Option 1 -->
+    <button onclick="console.log(65)">Another Button</button>
+    <br>
+    <button onclick="document.body.style.backgroundColor='yellow'">Make Yellow</button>
+    <!-- Option 2* -->
+    <button onclick="makeRed()">Make Red</button>
+    <!-- Option 3 -->
+    <button id="make-blue">Make Blue</button>
+    <button id="make-purple">Make Purple</button>
+    <!-- Option 4 -->
+     <button id="make-pink">Make Pink</button>
+     <button id="make-green">Make Green</button>
+     <button id="make-goldenrod">Make Goldenrod</button>
+    <script src="JS/events.js"></script>
+    <!-- <script>
+        function makeRed(){
+            document.body.style.backgroundColor = 'red';
+        }
+    </script> -->
+    <!-- <script>
+        const makeBlueButton = document.getElementById('make-blue');
+        console.log(makeBlueButton);
+    </script> -->
+    <!-- <script>
+        const makeBlueButton = document.getElementById('make-blue');
+        //makeBlueButton.onclick = makeBlue();
+        makeBlueButton.onclick = makeBlue;
+
+        function makeBlue(){
+            document.body.style.backgroundColor = 'blue';
+        }
+    </script> -->
+    <!-- <script>
+        const purpleButton = document.getElementById('make-purple');
+        //console.log(purpleButton);
+        purpleButton.onclick = function makePurple(){
+            document.body.style.backgroundColor = 'purple';
+        }
+    </script> -->
+    <!-- <script>
+        const pinkButton = document.getElementById('make-pink');
+        //console.log(pinkButton);
+        pinkButton.addEventListener('click', makePink);
+
+        function makePink(){
+            document.body.style.backgroundColor = 'pink';
+        }
+    </script> -->
+    <!-- <script>
+        const makeGreenButton = document.getElementById('make-green');
+        makeGreenButton.addEventListener('click', function makeGreen(){
+            document.body.style.backgroundColor = 'green';
+        })
+    </script> -->
+    <script>
+        //document.getElementById('make-goldenrod').addEventListener('click', function(){})
+        document.getElementById('make-goldenrod').addEventListener('click', function(){
+            document.body.style.backgroundColor = 'goldenrod';
+        })
+    </script>
+</body>
+</html>
